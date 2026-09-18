@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>NPTEL Online Certification Verification System</title>
     <style>
-        /* Base Reset */
+        /* Base Reset & Consistent Dark Grey Background across all states */
         html, body {
             margin: 0;
             padding: 0;
@@ -13,7 +13,7 @@
             height: 100%;
             font-family: Arial, sans-serif;
             box-sizing: border-box;
-            transition: background-color 0.3s ease;
+            background-color: #323639; /* Exact match dark grey from your first image */
         }
 
         /* Common Container Alignment Framework */
@@ -27,10 +27,10 @@
         }
 
         /* ==========================================================================
-           STAGE 1 STYLING: PDF Viewer Dark Grey Theme & Button Layout
+           STAGE 1 STYLING: Initial Welcome Button Layout
            ========================================================================== */
         #welcome-box-wrapper {
-            background-color: #323639; /* Exact match dark grey from your photo */
+            display: flex;
         }
         
         .btn-pdf-viewer { 
@@ -51,18 +51,15 @@
         }
 
         /* ==========================================================================
-           STAGE 2 STYLING: Off-White Background With White Card & Orange Spinner
+           STAGE 2 STYLING: Middle Screen - Full Dark Grey Theme (No White Card)
            ========================================================================== */
         #loader-box-wrapper { 
             display: none; 
-            background-color: #f4f6f9; /* Off-white layout from your third image */
         }
         
         .loader-card {
-            background: white; 
-            padding: 45px 30px; 
-            border-radius: 6px; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06); 
+            background: transparent; /* Removed white card background */
+            padding: 20px; 
             max-width: 480px; 
             width: 85%;
             text-align: center;
@@ -70,7 +67,7 @@
         }
         
         .orange-spinner { 
-            border: 4px solid #f3f3f3; 
+            border: 4px solid rgba(255, 255, 255, 0.1); /* Subtle dark border track */
             border-top: 4px solid #e67e22; /* Custom orange spinner matching your image */
             border-radius: 50%; 
             width: 45px; 
@@ -84,24 +81,23 @@
         }
         
         .loader-card h3 {
-            color: #2c3e50;
+            color: #ffffff; /* Changed to white text for dark background contrast */
             font-size: 17px;
             font-weight: bold;
-            margin: 0 0 10px 0;
+            margin: 0 0 12px 0;
             letter-spacing: -0.3px;
         }
         .loader-card p {
-            color: #95a5a6;
+            color: #b3b3b3; /* Changed to light grey subtitle for dark background contrast */
             font-size: 13px;
             margin: 0;
         }
 
         /* ==========================================================================
-           STAGE 3 STYLING: Clean Presentation Certificate Canvas
+           STAGE 3 STYLING: Final Clean Certificate Canvas Frame
            ========================================================================== */
         #cert-box-wrapper { 
             display: none; 
-            background-color: #323639; /* Seamless background layout grid mapping */
             padding: 15px;
             box-sizing: border-box;
         }
@@ -122,7 +118,7 @@
     </style>
     <script>
         function processSecureTransition() {
-            // Stage A Navigation: Instantly transition to clean light background loader panel
+            // Stage A Navigation: Instantly transition to clean dark background loader panel
             document.getElementById("welcome-box-wrapper").style.display = "none";
             document.getElementById("loader-box-wrapper").style.display = "flex";
 
@@ -136,12 +132,12 @@
 </head>
 <body>
 
-    <!-- Stage 1 Interface: Initial Entry Gate Panel -->
+    <!-- Stage 1 Interface: Initial Entry Gate Panel (Dark Grey Background) -->
     <div id="welcome-box-wrapper" class="flex-center">
         <button class="btn-pdf-viewer" onclick="processSecureTransition()">Course Certificate</button>
     </div>
 
-    <!-- Stage 2 Interface: Active System Validation Card Loop -->
+    <!-- Stage 2 Interface: Active System Validation Middle Loop (Seamless Dark Grey Background) -->
     <div id="loader-box-wrapper" class="flex-center">
         <div class="loader-card">
             <div class="orange-spinner"></div>
@@ -150,7 +146,7 @@
         </div>
     </div>
 
-    <!-- Stage 3 Interface: Secure Verified Target Certificate Frame -->
+    <!-- Stage 3 Interface: Secure Verified Target Certificate Frame (Dark Grey Background) -->
     <div id="cert-box-wrapper" class="flex-center">
         <div class="cert-canvas-frame">
             <img src="my_certificate_image.png" alt="NPTEL Online Certification Document Display Canvas">
